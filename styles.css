@@ -9,7 +9,7 @@ body {
     margin: 0px;
     padding: 0px;
     min-height: 100vh;
-    background-color: ligthgray;
+    background-color: ghostwhite;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
@@ -71,22 +71,19 @@ a:hover::before {
     background-color: lightgray;
 }
 
-a::before {
+.active::before {
     content: "";
     position: absolute;            
     height: 3px;
     right: 0px;
     bottom: -3px;
     left: 0px;
-    background-color: white;
+    background-color: black;
 }
 
 .active {
     color: black;
-}
-
-.active::before {
-    background-color: black;
+    font-weight: bold;
 }
 
 @media (min-width: 600px) {
@@ -113,9 +110,9 @@ a::before {
 main {
     grid-area: main;
     padding: 25px;
-    /* min-height: 100vh; */
 }
 
+/* PORTFOLIO */
 .portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -133,6 +130,61 @@ main {
     border-radius: 50%;
     max-width: 100%;
 }
+
+/* À PROPOS */
+.a-propos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+}
+
+.texte-presentation {
+    align-self: center;
+    text-align: justify;
+}
+
+.lien-vers-technique {
+    color: dodgerblue;
+}
+
+.lien-vers-technique:hover {
+    color: deepskyblue;
+}
+
+.bouton {
+    background-color: dodgerblue;
+    border-radius: 5px;
+    padding: 7px;
+    color: white;
+    margin-top: 25px;
+}
+
+.bouton:hover {
+    background-color: deepskyblue;
+    color: white;
+}
+
+.a-propos img {
+    justify-self: end;
+    max-width: 75%;
+}
+
+@media (max-width: 600px) {
+    .a-propos {
+        grid-template-columns: 1fr;
+    }
+
+    .a-propos img {
+        justify-self: center;
+    }
+
+    .texte-presentation {
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+    }
+}
+
 
 /* FOOTER */
 
