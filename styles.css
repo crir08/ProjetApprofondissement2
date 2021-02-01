@@ -152,16 +152,17 @@ main {
 }
 
 .bouton {
+    border: none;
     background-color: dodgerblue;
     border-radius: 5px;
     padding: 7px;
     color: white;
-    margin-top: 25px;
 }
 
 .bouton:hover {
     background-color: deepskyblue;
     color: white;
+    cursor: pointer;
 }
 
 .a-propos img {
@@ -185,6 +186,62 @@ main {
     }
 }
 
+/* CONTACT */
+.contact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+input {
+    border: 0;
+    border-radius: 15px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    margin: 10px 0 25px 0;
+    padding: 10px;
+}
+
+input:focus {
+    border: 2px solid black;
+    border-radius: 15px;
+    outline: none;
+}
+
+textarea {
+    border: 0;
+    border-radius: 15px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 10px 0 25px 0;
+    resize: vertical;
+}
+
+textarea:focus {
+    border: 2px solid black;
+    border-radius: 15px;
+    outline: none;
+}
+
+button {
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 15px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: deepskyblue;
+}
 
 /* FOOTER */
 
