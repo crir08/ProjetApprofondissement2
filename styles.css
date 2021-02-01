@@ -17,6 +17,21 @@ body {
     box-sizing: inherit;
 }
 
+.wrapper {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+/* HEADER */
+header {
+    grid-area: header;
+}
+
+/* NAVBAR */
+
 nav {
   padding: 10px;
   background-color: dodgerblue;
@@ -86,11 +101,6 @@ a::before {
   }
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
 .titre {
     text-align: center;
     background-color: dodgerblue;
@@ -99,15 +109,21 @@ a::before {
     color: white;
 }
 
+/* MAIN */
+main {
+    grid-area: main;
+    padding: 25px;
+    /* min-height: 100vh; */
+}
+
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 25px;
-    margin: 25px;
 }
 
 .portfolio .realisation {
-    background-color: blue;
+    text-align: center;
     align-self: center;
     justify-self: center;
     padding: 25px;
@@ -115,9 +131,13 @@ a::before {
 
 .portfolio .realisation img {
     border-radius: 50%;
+    max-width: 100%;
 }
 
+/* FOOTER */
+
 footer {
+    grid-area: footer;
     text-align: center;
     color: white;
     background-color: dodgerblue;
