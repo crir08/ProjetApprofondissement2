@@ -83,7 +83,6 @@ a::before {
   
   .fullwidth {
     grid-column: 1 / 2;
-    /* justify-self: start; */
   }
 }
 
@@ -120,6 +119,8 @@ a::before {
 
 footer {
     text-align: center;
+    color: white;
     background-color: dodgerblue;
     background: linear-gradient(to right, dodgerblue, deepskyblue);
+    padding: 10px;
 }
