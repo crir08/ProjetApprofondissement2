@@ -192,6 +192,23 @@ main {
     }
 }
 
+/* SERVICES */
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+}
+
+.services p {
+    text-align: justify;
+}
+
+@media (max-width: 600px) {
+    .services {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* CONTACT */
 .contact {
     display: grid;
