@@ -109,7 +109,7 @@ a:hover::before {
 /* MAIN */
 main {
     grid-area: main;
-    padding: 25px;
+    margin: 50px;
 }
 
 /* PORTFOLIO */
@@ -143,6 +143,10 @@ main {
     text-align: justify;
 }
 
+.texte-presentation p {
+    padding-bottom: 15px;
+}
+
 .lien-vers-technique {
     color: dodgerblue;
 }
@@ -152,11 +156,13 @@ main {
 }
 
 .bouton {
-    border: none;
     background-color: dodgerblue;
-    border-radius: 5px;
-    padding: 7px;
+    border: none;
+    border-radius: 15px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
     color: white;
+    margin-top: 25px;
+    padding: 10px;
 }
 
 .bouton:hover {
@@ -189,12 +195,23 @@ main {
 /* CONTACT */
 .contact {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 2fr 1fr;
+    column-gap: 50px;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        grid-template-columns: 1fr;
+    }
 }
 
 form {
     display: grid;
     grid-template-columns: 1fr;
+}
+
+label {
+    font-size: 15px;
 }
 
 input {
@@ -242,6 +259,41 @@ button:hover {
     cursor: pointer;
     background-color: deepskyblue;
 }
+
+.me-joindre {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: top;
+    margin-bottom: auto;
+}
+
+.information {
+    display: flex;
+    font-size: 20px;
+}
+
+.information i {
+    margin: 15px 20px 0 0;
+}
+
+.spacer {
+    margin-top: 25px;
+}
+
+.social {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.social a:hover {
+    cursor: pointer;
+    color: dodgerblue;
+}
+
+.social i {
+    margin-right: 25px;
+}
+
 
 /* FOOTER */
 
