@@ -131,6 +131,56 @@ main {
     max-width: 100%;
 }
 
+a img:hover {
+    filter: blur(3px);
+}
+
+/* HAVE FUN */
+.details {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+}
+
+.description p {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 25px;
+}
+
+.images img {
+    max-width: 100%;
+    border: solid 2px black;
+}
+
+/* EN VOITURE */
+@media(min-width: 1390px) {
+    .images {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+.btn-outline {
+    background-color: ghostwhite;
+    border: solid 1px dodgerblue;
+    border-radius: 15px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    color: dodgerblue;
+    margin-top: 25px;
+    padding: 10px;
+}
+
+.btn-outline:hover {
+    border: solid 1px deepskyblue;
+    color: deepskyblue;
+}
+
 /* À PROPOS */
 .a-propos {
     display: grid;
