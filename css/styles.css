@@ -1,10 +1,20 @@
+/**
+ * Author : Christophe Roux
+ * Description : Feuille de styles utilisée pour personnaliser l'apparence du site Web.
+ */
+
+ /* Importation d'une police de caractères. */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+/* STYLES GÉNÉRAUX */
+
+/* Styles de base pour l'élément <html>. */
 html {
     font-size: 100%;
     box-sizing: border-box;
 }
 
+/* Styles de base pour l'élément <body>. */
 body {
     margin: 0px;
     padding: 0px;
@@ -13,10 +23,12 @@ body {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
+/* Styles de base pour tous les éléments. */
 *, *::before, *::after {
     box-sizing: inherit;
 }
 
+/* Grille CSS principale utilisée par toutes les pages. */
 .wrapper {
     display: grid;
     grid-template-areas: 
@@ -25,19 +37,36 @@ body {
     "footer";
 }
 
-/* HEADER */
-header {
+/* Définit le <header> comme zone de la grille CSS. */
+ header {
     grid-area: header;
 }
 
-/* NAVBAR */
+/* Styles pour les titres des pages. */
+.titre {
+    text-align: center;
+    background-color: dodgerblue;
+    background: linear-gradient(to right, dodgerblue, deepskyblue);
+    padding: 25px 25px 50px 25px;
+    color: white;
+}
 
+/* Styles de l'élément <main> */
+main {
+    grid-area: main;
+    margin: 50px;
+}
+
+/*STYLES DU MENU */
+
+/* Styles de l'élément <nav>. */
 nav {
   padding: 10px;
   background-color: dodgerblue;
   background: linear-gradient(to right, dodgerblue, deepskyblue);
 }
 
+/* Styles de l'élément <ul> présent dans le <nav>. */
 nav ul {
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -49,28 +78,34 @@ nav ul {
   padding: 0;
 }
 
+/* Permet à un élément du menu de prendre toute une colonne. */
 .fullwidth {
   grid-column: 1 / 4;
 }
 
+/* Styles de l'élément <a> présent dans l'élément <li>. */
 li a {
   text-decoration: none;
   color: white;
 }
 
+/* Styles de l'élément <a>. */
 a {
     position: relative;
     text-decoration: none;
 }
 
+/* Styles de l'élément <a> lorsque la souris passe au-dessus. */
 a:hover {
     color: lightgray;
 }
 
+/* Styles pour le soulignement des options de menu. */
 a:hover::before {
     background-color: lightgray;
 }
 
+/* Permet d'ajouter un soulignement aux options de menu. */
 .active::before {
     content: "";
     position: absolute;            
@@ -81,44 +116,37 @@ a:hover::before {
     background-color: black;
 }
 
+/* Styles lorsque l'option de menu est sélectionnée. */
 .active {
     color: black;
     font-weight: bold;
 }
 
+/* Styles du menu lorsque la page fait 600 pixels et moins de largeur. */
 @media (min-width: 600px) {
+  /* Styles de l'élément <ul> présent dans le <nav>. */
   nav ul {
     grid-template-columns: 1fr repeat(3, fit-content(75px));
     grid-gap: 20px;
     justify-items: end;
   }
   
+  /* Permet à l'option de menu principale d'être en haut des autres options. */
   .fullwidth {
     grid-column: 1 / 2;
   }
 }
 
-.titre {
-    text-align: center;
-    background-color: dodgerblue;
-    background: linear-gradient(to right, dodgerblue, deepskyblue);
-    padding: 25px 25px 50px 25px;
-    color: white;
-}
+/* STYLES DE LA PAGE PORTFOLIO */
 
-/* MAIN */
-main {
-    grid-area: main;
-    margin: 50px;
-}
-
-/* PORTFOLIO */
+/* Définit le portfolio comme étant une grille CSS. */
 .portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 25px;
 }
 
+/* Styles pour chacune des réalisations du portfolio. */
 .portfolio .realisation {
     text-align: center;
     align-self: center;
@@ -126,46 +154,54 @@ main {
     padding: 25px;
 }
 
+/* Styles pour chacune des images des réalisations du portfolio. */
 .portfolio .realisation img {
     border-radius: 50%;
     max-width: 100%;
 }
 
+/* Styles lorsque la souris passe au-dessus de l'image. */
 a img:hover {
     filter: blur(3px);
 }
 
-/* HAVE FUN */
+/* STYLES DE LA PAGE HAVE FUN */
+
+/* Définit les détails comme étant une grille CSS. */
 .details {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 50px;
 }
 
+/* Styles pour le paragraphe de la description. */
 .description p {
     font-size: 20px;
     line-height: 1.6;
     text-align: justify;
 }
 
+/* Définit la divison image comme étant une grille CSS. */
 .images {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 25px;
 }
 
+/* Styles pour les images du projet. */
 .images img {
     max-width: 100%;
     border: solid 2px black;
 }
 
-/* EN VOITURE */
+/* Style de la grille CSS des images lorsque l'écran fait 1390 pixels et plus de largeur. */
 @media(min-width: 1390px) {
     .images {
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
 }
 
+/* Styles pour déguiser le <a> en bouton de type outline. */
 .btn-outline {
     background-color: ghostwhite;
     border: solid 1px dodgerblue;
@@ -176,35 +212,43 @@ a img:hover {
     padding: 10px;
 }
 
+/* Styles lorsque la souris passe au-dessus du <a> déguisé. */
 .btn-outline:hover {
     border: solid 1px deepskyblue;
     color: deepskyblue;
 }
 
-/* À PROPOS */
+/* STYLES DE LA PAGE À PROPOS */
+
+/* Définit la divison À propos comme étant une grille CSS. */
 .a-propos {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 25px;
 }
 
+/* Styles du texte de présentation. */
 .texte-presentation {
     align-self: center;
     text-align: justify;
 }
 
+/* Styles de l'élément <p> du texte de présentation. */
 .texte-presentation p {
     padding-bottom: 15px;
 }
 
+/* Style du lien vers la technique info. */
 .lien-vers-technique {
     color: dodgerblue;
 }
 
+/* Style du lien vers la technique info lorsque la souris passe au-dessus. */
 .lien-vers-technique:hover {
     color: deepskyblue;
 }
 
+/* Styles du lien <a> déguisé en bouton. */
 .bouton {
     background-color: dodgerblue;
     border: none;
@@ -215,26 +259,32 @@ a img:hover {
     padding: 10px;
 }
 
+/* Styles du lien <a> déguisé en bouton lorsque la souris passe au-dessus. */
 .bouton:hover {
     background-color: deepskyblue;
     color: white;
     cursor: pointer;
 }
 
+/* Styles de l'image de la section À propos. */
 .a-propos img {
     justify-self: end;
     max-width: 75%;
 }
 
+/* Styles de la page À propos lorsque l'écran fait 600 pixels et moins de largeur. */
 @media (max-width: 600px) {
+    /* Modifie la disposition de la grille CSS. */
     .a-propos {
         grid-template-columns: 1fr;
     }
 
+    /* Place l'image au centre. */
     .a-propos img {
         justify-self: center;
     }
 
+    /* Centre le texte de présentation. */
     .texte-presentation {
         align-self: center;
         justify-self: center;
@@ -242,45 +292,55 @@ a img:hover {
     }
 }
 
-/* SERVICES */
+/* STYLES DE LA PAGE DES SERVICES */
+
+/* Définit la divison services comme étant une grille CSS. */
 .services {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 50px;
 }
 
+/* Styles des éléments <p> dans la division services. */
 .services p {
     text-align: justify;
 }
 
+/* Styles de la page services lorsque l'écran fait 600 pixels et moins de largeur. */
 @media (max-width: 600px) {
     .services {
         grid-template-columns: 1fr;
     }
 }
 
-/* CONTACT */
+/* STYLES DE LA PAGE CONTACT */
+
+/* Définit la division contact comme étant une grille CSS. */
 .contact {
     display: grid;
     grid-template-columns: 2fr 1fr;
     column-gap: 50px;
 }
 
+/* Styles de la page contact lorsque l'écran fait 768 pixels et moins de largeur. */
 @media (max-width: 768px) {
     .contact {
         grid-template-columns: 1fr;
     }
 }
 
+/* Définit le formulaire de contact comme étant une grille CSS. */
 form {
     display: grid;
     grid-template-columns: 1fr;
 }
 
+/* Style des éléments <label>. */
 label {
     font-size: 15px;
 }
 
+/* Styles des éléments <input> */
 input {
     border: 0;
     border-radius: 15px;
@@ -290,12 +350,14 @@ input {
     padding: 10px;
 }
 
+/* Styles de l'élément <input> lorsqu'il est sélectionné. */
 input:focus {
     border: 2px solid black;
     border-radius: 15px;
     outline: none;
 }
 
+/* Styles de l'élément <textarea>. */
 textarea {
     border: 0;
     border-radius: 15px;
@@ -306,12 +368,14 @@ textarea {
     resize: vertical;
 }
 
+/* Styles de l'élément <textarea> lorsqu'il est sélectionné. */
 textarea:focus {
     border: 2px solid black;
     border-radius: 15px;
     outline: none;
 }
 
+/* Styles du bouton de soumission du formulaire. */
 button {
     background-color: dodgerblue;
     border: none;
@@ -322,11 +386,13 @@ button {
     padding: 10px;
 }
 
+/* Styles du bouton de soumission lorsque la souris passe au-dessus. */
 button:hover {
     cursor: pointer;
     background-color: deepskyblue;
 }
 
+/* Définit la divison me joindre comme étant une grille CSS. */
 .me-joindre {
     display: grid;
     grid-template-columns: 1fr;
@@ -334,36 +400,41 @@ button:hover {
     margin-bottom: auto;
 }
 
+/* Styles des divisions information. */
 .information {
     display: flex;
     font-size: 20px;
 }
 
+/* Styles des icônes des divisions information. */
 .information i {
     margin: 15px 20px 0 0;
 }
 
+/* Classe permettant d'ajouter un espace entre deux éléments. */
 .spacer {
     margin-top: 25px;
 }
 
+/* Styles de la section social. */
 .social {
     display: flex;
     margin-bottom: 25px;
 }
 
+/* Styles des liens de la section social. */
 .social a:hover {
     cursor: pointer;
     color: dodgerblue;
 }
 
+/* Style des icônes de la section social. */
 .social i {
     margin-right: 25px;
 }
 
 
-/* FOOTER */
-
+/* STYLES DU PIED DE PAGE */
 footer {
     grid-area: footer;
     text-align: center;
